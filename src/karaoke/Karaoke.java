@@ -19,8 +19,11 @@ public class Karaoke {
     public static void main(String[] args) {
         // TODO code application logic here
         SongBook songbook = new SongBook();
+        songbook.importFrom("songs.txt");
         KaraokeMachine machine = new KaraokeMachine(songbook);
         machine.run();
+        System.out.println("Saving book...");
+        songbook.exportTo("songs.txt");
     }
     
 }
